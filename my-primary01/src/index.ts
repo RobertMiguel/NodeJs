@@ -1,13 +1,15 @@
-import express, {Request,Response,NextFunction} from "express";
+import express from "express";
+import statusRouter from "./routes/status.router";
 import usersRouter from "./routes/users.router";
 
-const app = express()
+const app = express();
 
-app.use(usersRouter)
-app.get('/status', (req: Request,res: Response,next: NextFunction) => {
-    res.status(200).send({ foo: 'Sucesso'})
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(300, ()=>{
+app.use(usersRouter);
+app.use(statusRouter)
+
+app.listen(300, () => {
     console.log('Aplicação executando na porta 300')
 })

@@ -2,6 +2,7 @@ import express from "express";
 import statusRouter from "./routes/status.router";
 import usersRouter from "./routes/users.router";
 
+
 const app = express();
 
 app.use(express.json());

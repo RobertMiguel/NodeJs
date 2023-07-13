@@ -3,7 +3,6 @@ import 'dotenv/config';
 
 import { router } from './routes';
 
-
 const server = express();
 
 server.use(express.json());

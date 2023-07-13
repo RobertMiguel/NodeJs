@@ -1,11 +1,18 @@
-import express from 'express'
-import { getHomePage, getAboutPage } from './modules/express'
+// import express from 'express'
+import dotenv from 'dotenv'
+import * as connect from './src/database/connect'
+// import { getHomePage, getAboutPage, getUsers } from './modules/express'
 
-const app = express()
+// const app = express()
 
-app.get('/home', getHomePage)
-app.get('/about', getAboutPage)
+dotenv.config()
 
-const port = 8080
+connect
 
-app.listen(port, () => { console.log(`Server ir running on port ${port}`) })
+// app.get('/home', getHomePage)
+// app.get('/about', getAboutPage)
+// app.get('/users', getUsers)
+
+// const port = 8080
+
+// app.listen(port, () => { console.log(`Server ir running on port ${port}`) })
